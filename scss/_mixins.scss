@@ -1,0 +1,31 @@
+@use './variables' as *;
+
+@mixin flex($direction: column,$gap: 1rem) {
+    display: flex;
+    flex-direction: $direction;
+    gap: $gap;
+}
+
+// Mixin for breakpoints
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == xs {
+      @media (max-width: $breakpoint-xs) {
+        @content; // Insert styles here
+      }
+    } @else if $breakpoint == sm {
+      @media (max-width: $breakpoint-sm) {
+        @content; // Insert styles here
+      }
+    } @else if $breakpoint == md {
+      @media (max-width: $breakpoint-md) {
+        @content; // Insert styles here
+      }
+    } @else if $breakpoint == lg {
+      @media (max-width: $breakpoint-lg) {
+        @content; // Insert styles here
+      }
+    }  @else {
+      @warn "No valid breakpoint specified!";
+    }
+  }
+  

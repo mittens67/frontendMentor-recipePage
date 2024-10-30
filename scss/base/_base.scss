@@ -1,0 +1,7 @@
+@use '../variables' as *;
+
+hr {
+    background-color: $color-stone-150;
+    border: none;
+    height: .1rem;
+}
